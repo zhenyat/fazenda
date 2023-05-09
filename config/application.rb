@@ -30,7 +30,7 @@ module Fazenda
 
     # ZT updates
     # config.multilingual         = false       # Alternative to MULTILINGUAL (used as: Rails.application.config.multilingual) 
-    config.time_zone              = config.time_zone = 'Eastern Time (US & Canada)'   # Default: UTC
+    config.time_zone              = 'Eastern Time (US & Canada)'   # Default: UTC
     config.i18n.available_locales = %w(en es)   # [:en, :es, :de] - to be compared / investigated
     config.i18n.default_locale    = :en
     config.i18n.load_path        += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]  # YAML Multiple structure

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_08_168360) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_08_168361) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -47,6 +47,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_168360) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "growers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.string "address"
+    t.string "phone"
+    t.string "url"
+    t.string "about"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_growers_on_name", unique: true
   end
 
   create_table "samples", force: :cascade do |t|
