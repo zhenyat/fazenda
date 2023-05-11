@@ -86,25 +86,28 @@ gem 'devise_token_auth', github:  'lynndylanhurley/devise_token_auth'
 ########################################
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "selenium-webdriver"
+  gem 'webdrivers'        # replaced chromedriver-helper after 2019-03-31
+
 end
  
 # gem "rack-mini-profiler"  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
 # gem "spring"             # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
 
-  group :development do
-    gem 'solargraph'
-    gem 'foreman'
-    gem 'web-console'        # Access an IRB console on exception pages or by using <%= console %> in views
+group :development do
+  gem 'solargraph'
+  gem 'foreman'
+  gem 'web-console'        # Access an IRB console on exception pages or by using <%= console %> in views
 
-  # gem "rack-mini-profiler"  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "spring"             # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  end
+# gem "rack-mini-profiler"  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+# gem "spring"             # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
-  gem 'webdrivers'        # replaced chromedriver-helper after 2019-03-31
+  # gem "selenium-webdriver"
+  # gem 'webdrivers'        # replaced chromedriver-helper after 2019-03-31
 
   # gem 'shoulda'
   # gem 'minitest-reporters'
