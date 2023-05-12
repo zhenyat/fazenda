@@ -1,6 +1,13 @@
 begin
-  if Grower.present? and not Grower.exists?
-    Grower.create!([
+  if Vendor.present? and not Vendor.exists?
+    Vendor.create!([
+      { name:    'dummy', 
+        title:   'Vendor not existing',
+        address: '',
+        phone:   '',
+        url:     '',
+        about:   'This is a "dummy" vendor for DB consistency only'
+      },
       { name:    'iseli', 
         title:   'Iseli Nursery',
         address: '30590 SE Kelso Rd, Boring, OR 97009',
@@ -10,9 +17,9 @@ begin
       },
       
     ])
-    puts "===== #{Grower.count} 'Grower' record(s) created"
+    puts "===== #{Vendor.count} 'Vendor' record(s) created"
   else
-    puts "===== 'Grower' seeding skipped"
+    puts "===== 'Vendor' seeding skipped"
   end
 rescue StandardError, AnotherError => e
   puts "----- Achtung! Something went wrong..."

@@ -1,14 +1,14 @@
 <div class='container'>
   <table class='table table-striped'>
     <tbody>
-      <% @grower.attributes.each do |key, value| %>
+      <% @vendor.attributes.each do |key, value| %>
         <tr>
           <% unless key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at' %>
             <% if key == 'status' %>
               <td><%= t 'status.status' %></td>
-              <td><%= status_mark @grower.status %></td>
+              <td><%= status_mark @vendor.status %></td>
             <% else %>
-              <td><%= t "activerecord.attributes.grower.#{key}" %></td>
+              <td><%= t "activerecord.attributes.vendor.#{key}" %></td>
               <td><%= value %></td>
             <% end %>
           <% end %>
@@ -16,6 +16,6 @@
       <% end %>
     </tbody>
   </table>
-  <%= render 'admin/shared/show_rich_text_content', object: @grower %>
-  <%= render 'admin/shared/show_images', object: @grower %>
+  <%= render 'admin/shared/show_rich_text_content', object: @vendor %>
+  <%= render 'admin/shared/show_images', object: @vendor %>
 </div>

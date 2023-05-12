@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-ms-6">
-      <%=  simple_form_for([:admin, @grower], html: {multipart: true}) do |f| %>
+      <%=  simple_form_for([:admin, @vendor], html: {multipart: true}) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -14,9 +14,9 @@
           <%= f.input :about %>
           <%= f.input :status, default: 0 %>
           <%#= render 'admin/shared/status_buttons', f: f %>
-          <%= render 'admin/shared/form_avatar', f: f, object: @grower %>
+          <%= render 'admin/shared/form_avatar', f: f, object: @vendor %>
 
-          <%= render 'admin/shared/form_actions', f: f, object: @grower %>
+          <%= render 'admin/shared/form_actions', f: f, object: @vendor %>
         </div>
       <% end %>
     </div>

@@ -1,0 +1,9 @@
+<div class='container'>
+  <p style='color: green'><%= notice %></p>
+  <h1>
+    <%= t Vendor.model_name.human %>
+    <%= render 'admin/shared/show_avatar', object: @vendor, size: 50 %>
+  </h1>
+  <%= render @vendor %>
+  <%= render 'admin/shared/show_actions', object: @vendor %>
+</div>

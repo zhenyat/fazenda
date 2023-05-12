@@ -1,0 +1,34 @@
+<h1><%= t Vendor.model_name.human(count: 2) %></h1>
+<table class='table table-hover'>
+  <thead>
+      <th><%= Vendor.human_attribute_name(:name) %></th>
+      <th><%= Vendor.human_attribute_name(:title) %></th>
+      <th><%= Vendor.human_attribute_name(:address) %></th>
+      <th><%= Vendor.human_attribute_name(:phone) %></th>
+      <th><%= Vendor.human_attribute_name(:url) %></th>
+      <th><%= Vendor.human_attribute_name(:about) %></th>
+      <th><%= t 'status.status' %></th>
+      <th><%= t 'actions.actions' %><th>
+  </thead>
+
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+        <td><%= vendor.title %></td>
+        <td><%= vendor.address %></td>
+        <td><%= vendor.phone %></td>
+        <td><%= vendor.url %></td>
+        <td><%= vendor.about %></td>
+        <td><%= status_mark vendor.status %></td>
+        <td><%= render 'admin/shared/index_buttons', resource: vendor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div class='row'>
+  <div class='col-md-2'>
+    <%= link_to t('actions.create'), new_admin_vendor_path, class: 'btn btn-primary btn-sm' %>
+  </div>
+</div>
