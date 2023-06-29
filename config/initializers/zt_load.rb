@@ -7,6 +7,7 @@
 #
 #   11.10.2016  ZT  Inherited from BKC 95km
 #   14.11.2021  Russian Regions
+#   28.06.2023  Plant params
 ################################################################################
 
 # Gets default App configuration parameters
@@ -20,6 +21,13 @@ if File.exist? "#{Rails.root}/#{filename}"
     run_config = YAML.load_file("#{Rails.root}/#{filename}")
     ZT_CONFIG.deep_merge! run_config if run_config.present?  # File contains values
   end
+end
+
+# Plant params
+filename = "#{Rails.root}/config/zt_config/plant.yml"
+if File.exist? filename
+  plant_params = YAML.load_file filename
+  ZT_CONFIG.deep_merge! plant_params if plant_params.present?
 end
 
 # Sets Constants and Parameters for the App run

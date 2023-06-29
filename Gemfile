@@ -7,11 +7,12 @@
 #
 #   28.06.2015  ZT
 #   . . .
-#   23.03.2022  Ruby 3.1.1 / Rails 7.0.2.3
-#   19.04.2022  Ruby 3.1.2
-#   20.05.2022	Rails 7.0.3
-#   08.05.2022	Ruby 3.2.2 / Rails 7.0.4
+#   23.03.2023  Ruby 3.1.1 / Rails 7.0.2.3
+#   19.04.2023  Ruby 3.1.2
+#   20.05.2023	Rails 7.0.3
+#   08.05.2023	Ruby 3.2.2 / Rails 7.0.4
 #               Workaround: psych < 4
+#   29.06.2023  Rails 7.0.5.1
 #   
 #     rails new app --css bootstrap
 #
@@ -22,7 +23,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
-gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+gem "rails", "~> 7.0.5"
 
 gem "sprockets-rails"   # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "puma"              # Use the Puma web server [https://github.com/puma/puma]

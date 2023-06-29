@@ -1,0 +1,33 @@
+color_list:
+  - Insignificant
+  - White
+  - Red
+  - Orange
+  - Yellow
+  - Green
+  - Blue
+  - Lavender
+  - Pink
+  - Purple
+  - Brown
+  - Not applicable
+
+sunlight_list:
+  - Full sun
+  - Partial shade
+  - Full shade
+
+soil_list:
+  - Clay
+  - Loam
+  - Silt
+  - Sandy
+  - Wide range
+  - Well-drained
+  - Water-retentive
+
+soil_ph_list:
+  - Acidic
+  - Neutral
+  - Alkaline
+  - Wide-range

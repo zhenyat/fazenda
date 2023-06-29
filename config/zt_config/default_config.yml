@@ -27,7 +27,6 @@ defaults: &defaults
   multilingual:
     status:         true
 
-
 development:
   <<: *defaults
 
