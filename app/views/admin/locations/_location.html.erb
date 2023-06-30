@@ -1,14 +1,14 @@
 <div class='container'>
   <table class='table table-striped'>
     <tbody>
-      <% @area.attributes.each do |key, value| %>
+      <% @location.attributes.each do |key, value| %>
         <tr>
           <% unless key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at' %>
             <% if key == 'status' %>
               <td><%= t 'status.status' %></td>
-              <td><%= status_mark @area.status %></td>
+              <td><%= status_mark @location.status %></td>
             <% else %>
-              <td><%= t "activerecord.attributes.area.#{key}" %></td>
+              <td><%= t "activerecord.attributes.location.#{key}" %></td>
               <td><%= value %></td>
             <% end %>
           <% end %>
@@ -16,6 +16,6 @@
       <% end %>
     </tbody>
   </table>
-  <%= render 'admin/shared/show_rich_text_content', object: @area %>
-  <%= render 'admin/shared/show_images', object: @area %>
+  <%= render 'admin/shared/show_rich_text_content', object: @location %>
+  <%= render 'admin/shared/show_images', object: @location %>
 </div>

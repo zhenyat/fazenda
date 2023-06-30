@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       resources :users
       resources :samples
       resources :vendors
-      resources :areas
+      resources :locations
       # Add new admin resources before this line
     end
 
