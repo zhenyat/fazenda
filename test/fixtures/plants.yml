@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family: one
+  name: MyString
+  sci_name: MyString
+  common_name: MyString
+  kind: 1
+  coldest: 1
+  warmest: 1
+  height_min: 1.5
+  height_max: 1.5
+  spread_min: 1.5
+  spread_max: 1.5
+  bloom_start: 1
+  bloom_end: 1
+  bloom_color: MyString
+  light_min: MyString
+  light_max: MyString
+  soil_texture: MyString
+  soil_ph: MyString
+  special_reqs: MyText
+  description: MyText
+  status: 1
+
+two:
+  family: two
+  name: MyString
+  sci_name: MyString
+  common_name: MyString
+  kind: 1
+  coldest: 1
+  warmest: 1
+  height_min: 1.5
+  height_max: 1.5
+  spread_min: 1.5
+  spread_max: 1.5
+  bloom_start: 1
+  bloom_end: 1
+  bloom_color: MyString
+  light_min: MyString
+  light_max: MyString
+  soil_texture: MyString
+  soil_ph: MyString
+  special_reqs: MyText
+  description: MyText
+  status: 1

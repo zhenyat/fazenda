@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_30_164013) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_01_074317) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,6 +49,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_164013) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "families", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.string "comment"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_families_on_name", unique: true
+  end
+
   create_table "locations", force: :cascade do |t|
     t.integer "number", null: false
     t.string "title", null: false
@@ -58,6 +68,40 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_164013) do
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_locations_on_number", unique: true
     t.check_constraint "number > 0"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.integer "family_id", null: false
+    t.string "name", null: false
+    t.string "sci_name", null: false
+    t.string "common_name", null: false
+    t.integer "kind", limit: 1, default: 0, null: false
+    t.integer "coldest", limit: 1, default: 0, null: false
+    t.integer "warmest", limit: 1, default: 0, null: false
+    t.float "height_min"
+    t.float "height_max"
+    t.float "spread_min"
+    t.float "spread_max"
+    t.integer "bloom_start", limit: 1, default: 0, null: false
+    t.integer "bloom_end", limit: 1, default: 0, null: false
+    t.string "bloom_color", null: false
+    t.string "light_min", null: false
+    t.string "light_max", null: false
+    t.string "soil_texture", null: false
+    t.string "soil_ph", null: false
+    t.text "special_reqs"
+    t.text "description"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["common_name"], name: "index_plants_on_common_name", unique: true
+    t.index ["family_id"], name: "index_plants_on_family_id"
+    t.index ["name"], name: "index_plants_on_name", unique: true
+    t.index ["sci_name"], name: "index_plants_on_sci_name", unique: true
+    t.check_constraint "height_max > 0.0"
+    t.check_constraint "height_min > 0.0"
+    t.check_constraint "spread_max > 0.0"
+    t.check_constraint "spread_min > 0.0"
   end
 
   create_table "samples", force: :cascade do |t|
@@ -100,4 +144,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_164013) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "plants", "families"
 end

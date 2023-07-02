@@ -1,4 +1,6 @@
+# Growth requirements for multiple choice
 color_list:
+  - Non-flowering
   - Insignificant
   - White
   - Red
@@ -10,7 +12,6 @@ color_list:
   - Pink
   - Purple
   - Brown
-  - Not applicable
 
 sunlight_list:
   - Full sun

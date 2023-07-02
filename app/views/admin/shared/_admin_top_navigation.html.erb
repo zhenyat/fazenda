@@ -43,13 +43,16 @@
           </a>
           <div aria-labelledby="navbarDropdown" class="dropdown-menu">
             <div class="dropdown-item" >
-              <%= link_to t(Vendor.model_name.human(count: 2)),  admin_vendors_path %>
+              <%= link_to t(Vendor.model_name.human(count: 2)), admin_vendors_path %>
             </div>
             <div class="dropdown-item" >
-              <%= link_to t(Area.model_name.human(count: 2)),  admin_areas_path %>
+              <%= link_to t(Location.model_name.human(count: 2)), admin_locations_path %>
+            </div>
+            <div class="dropdown-item" >
+              <%= link_to t(Family.model_name.human(count: 2)), admin_families_path %>
             </div>
             <div class="dropdown-item">
-              <%#= link_to t(Partner.model_name.human(count: 2)), admin_partners_path %>
+              <%= link_to t(Plant.model_name.human(count: 2)), admin_plants_path %>
             </div>
             <div class="dropdown-divider"></div>
             <div class="dropdown-item">
