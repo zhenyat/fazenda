@@ -22,6 +22,8 @@ if ZT_DEBUG == true && !ZT_LOG_FILE.nil?
 end
 
 ##### Plant model: non-attribute parameters   #####
+BLOOM_START  = ZT_CONFIG['bloom_start']
+BLOOM_END    = ZT_CONFIG['bloom_end']
 PLANT_COLORS = ZT_CONFIG['color_list']
 # PLANT_COLORS = ZT_CONFIG['color_list'].sort{ |x, y| x[0] <=> y[0]}
 SUNLIGHTS    = ZT_CONFIG['sunlight_list']

@@ -17,51 +17,83 @@
           <%= f.input :height_max %>
           <%= f.input :spread_min %>
           <%= f.input :spread_max %>
-          <%= f.input :bloom_start, include_blank: false %>
-          <%= f.input :bloom_end, include_blank: false %>
-          <%= f.label :bloom_colors %><br/>
-          <%= select_tag(
-              :bloom_color,
-              options_for_select(PLANT_COLORS.sort),
-              {:multiple => true, :size => 5, :class => "col-md-3"}
-            )
-          %>
-          <br/><%= f.label :light_min %><br/>
-          <%= select_tag(
-              :light_min,
-              options_for_select(SUNLIGHTS.sort),
-              {:multiple => true, :size => 3, :class => "col-md-3"}
-            )
-          %>
-          <br/><%= f.label :light_max %><br/>
-          <%= select_tag(
-              :light_max,
-              options_for_select(SUNLIGHTS.sort),
-              {:multiple => true, :size => 3, :class => "col-md-3"}
-            )
-          %>
-          <br/><%= f.label :soil_texture %><br/>
-          <%= select_tag(
-              :soil_texture,
-              options_for_select(SOILS.sort),
-              {:multiple => true, :size => 5, :class => "col-md-3"}
-            )
-          %>
-          <br/><%= f.label :soil_ph %><br/>
-          <%= select_tag(
-              :soil_ph,
-              options_for_select(SOIL_PH.sort),
-              {:multiple => true, :size => 4, :class => "col-md-3"}
-            )
-          %>
-          <%#= f.input :light_min %>
-          <%#= f.input :light_max %>
-          <%#= f.input :soil_texture %>
-          <%#= f.input :soil_ph %>
-          <%= f.input :special_reqs %>
-          <%= f.input :description %>
-          <%= f.input :status, default: 0 %>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.label :bloom_start %><br/>
+                <%= select_tag(
+                    :bloom_start,
+                    options_for_select(BLOOM_START, @bloom_starts),
+                    {:multiple => true, :size => 5, :class => "col-md-4"},
+                  )
+                %>
+              </div>
+              <div class="col-md-4">
+                <%= f.label :bloom_end %><br/>
+                <%= select_tag(
+                    :bloom_end,
+                    options_for_select(BLOOM_END, @bloom_ends),
+                    {:multiple => true, :size => 5, :class => "col-md-4"}
+                  )
+                %>
+              </div>
+              <div class="col-md-4">
+                <%= f.label :bloom_colors %><br/>
+                <%= select_tag(
+                    :bloom_color,
+                    options_for_select(PLANT_COLORS.sort, @bloom_colors),
+                    {:multiple => true, :size => 5, :class => "col-md-4"}
+                  )
+                %>
+              </div>
+            </div>
+          </div>
+          </br>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <%= f.label :light_min %><br/>
+                <%= select_tag(
+                    :light_min,
+                    options_for_select(SUNLIGHTS.sort, @light_mins),
+                    {:multiple => true, :size => 3, :class => "col-md-4"}
+                  )
+                %>
+              </div>
+              <div class="col-md-3">
+                <%= f.label :light_max %><br/>
+                <%= select_tag(
+                    :light_max,
+                    options_for_select(SUNLIGHTS.sort, @light_maxs),
+                    {:multiple => true, :size => 3, :class => "col-md-4"}
+                  )
+                %>
+              </div>
+              <div class="col-md-3">
+                <%= f.label :soil_texture %><br/>
+                <%= select_tag(
+                    :soil_texture,
+                    options_for_select(SOILS.sort, @soil_textures),
+                    {:multiple => true, :size => 5, :class => "col-md-6"}
+                  )
+                %>
+              </div>
+              <div class="col-md-3">
+                <%= f.label :soil_ph %><br/>
+                <%= select_tag(
+                    :soil_ph,
+                    options_for_select(SOIL_PH.sort, @soil_phs),
+                    {:multiple => true, :size => 4, :class => "col-md-4"}
+                  )
+                %>
+              </div>
+            </div>
+          </div>
+            <%= f.input :status, default: 0 %>
           <%#= render 'admin/shared/status_buttons', f: f %>
+          <h4>Culture</h4>
+          <%= render 'admin/shared/form_rich_text_content', f: f, object: @plant %>
+          <%= render 'admin/shared/form_images', f: f, object: @plant %>
 
           <%= render 'admin/shared/form_actions', f: f, object: @plant %>
         </div>

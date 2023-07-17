@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_01_074317) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_16_145802) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -78,19 +78,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_01_074317) do
     t.integer "kind", limit: 1, default: 0, null: false
     t.integer "coldest", limit: 1, default: 0, null: false
     t.integer "warmest", limit: 1, default: 0, null: false
-    t.float "height_min"
-    t.float "height_max"
-    t.float "spread_min"
-    t.float "spread_max"
-    t.integer "bloom_start", limit: 1, default: 0, null: false
-    t.integer "bloom_end", limit: 1, default: 0, null: false
+    t.float "height_min", null: false
+    t.float "height_max", null: false
+    t.float "spread_min", null: false
+    t.float "spread_max", null: false
+    t.string "bloom_start", null: false
+    t.string "bloom_end", null: false
     t.string "bloom_color", null: false
     t.string "light_min", null: false
     t.string "light_max", null: false
     t.string "soil_texture", null: false
     t.string "soil_ph", null: false
-    t.text "special_reqs"
-    t.text "description"
     t.integer "status", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

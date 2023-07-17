@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :locations
       resources :families
       resources :plants
+      resources :plants
       # Add new admin resources before this line
     end
 
